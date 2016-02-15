@@ -59,6 +59,7 @@ $ hub create github-flow-practice
 你没看错，根本不需要打开网页，直接在你的终端就创建了一个 GitHub 的 repo。
 
 创建成功后，你就可以看到如下的信息（你会发现你甚至不需要输入你的 GitHub username）
+
 ```
 origin	git@github.com:p2p-pub/github-flow-practice.git (fetch)
 origin	git@github.com:p2p-pub/github-flow-practice.git (push)
@@ -94,3 +95,28 @@ $ git push origin add-readme-markdown
 ```
 
 在实际工作流中，你如果想看到其他人在改什么，你只需要运行 `$ git fetch` 就拉取到所有的远端分支，其他人在什么分支工作就一目了然了。
+
+你想看下当前分支和主分支的对比时，随时都可以看，只需要运行
+
+```
+$ hub compare
+```
+
+会带在你的默认浏览器中打开了 compare 的页面，一目了然。
+
+好了，更改完成后，我们就可以发起 Pull Request 了。
+
+```
+$ hub pull-request -m "Init and add README.md"
+```
+
+和你的伙伴展开愉快的讨论，并确保没有问题后，就可以将这个 pr 做 merge 了。
+
+一切看起来就是这么轻松和自然，按照人可以读懂的方式书写你的 commit message 会有很大的帮助。
+
+## 参考
+
+- [Understanding the GitHub Flow](https://guides.github.com/introduction/flow/)
+- [hub repo](https://github.com/github/hub)
+- [今天让我们忘记 git-flow](http://mp.weixin.qq.com/s?__biz=MzIwMTIzMzIzMg==&mid=409814682&idx=1&sn=f3ce47fbd13a070e74809c81a2038f19#rd)
+- [github-flow-practice repo](https://github.com/0dayZh/github-flow-practice)
