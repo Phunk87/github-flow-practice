@@ -114,6 +114,22 @@ $ hub pull-request -m "Init and add README.md"
 
 一切看起来就是这么轻松和自然，按照人可以读懂的方式书写你的 commit message 会有很大的帮助。
 
+切换回主分支并拉取最新代码
+
+```
+$ git checkout master
+$ git pull origin master --rebase
+```
+
+merge 后之前创建的 add-readme-markdown 分支就可以删除了，之后每次单次的修改尽可能可以在一个分支内单独完成。
+
+```
+$ git branch --delete add-readme-markdown
+$ git push origin --delete add-readme-markdown
+```
+
+GitHub Flow 不单单是工作流，它也会考验软件整体架构的接偶程度。如果工程耦合程度过高，会带来合并时冲突严重的问题。
+
 ## 参考
 
 - [Understanding the GitHub Flow](https://guides.github.com/introduction/flow/)
